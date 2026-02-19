@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Edwardian Script";
+  src: url(./fonts/EdwardianScriptITC.ttf);
+}
+
+.cursive {
+  font-family: "Edwardian Script", cursive;
+}
+
+body {
+  background: #0d0d0d;
+  color: #e0e0e0;
+  padding-top: 80px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* BUTTONS */
+.btn-gold {
+  background: #c9a24d;
+  color: #000;
+  border: none;
+}
+
+.btn-gold:hover {
+  background: #b08c3c;
+}
+
+/* PAGES */
+.page-section {
+  padding: 80px 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #navMenu {
+    text-align: center;
+  }
+}
