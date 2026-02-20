@@ -1,6 +1,13 @@
-<script setup></script>
+<script setup>
+const API_BASE = "http://localhost:8000";
+const heroUrl = `${API_BASE}/storage/web/hero.jpg`;
+</script>
+
 <template>
-  <section class="hero">
+  <section
+    class="hero"
+    :style="{ background: `url(${heroUrl}) center/cover no-repeat` }"
+  >
     <div class="hero-overlay"></div>
     <div class="container hero-content text-center">
       <h4 class="cursive">Welcome to</h4>
@@ -27,7 +34,6 @@
 .hero {
   position: relative;
   min-height: 90vh;
-  background: url("../assets/images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
 }
