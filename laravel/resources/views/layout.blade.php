@@ -15,10 +15,14 @@
         crossorigin="anonymous"
         ></script>
 
+        <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
+
         <title>Bethsany's CMS</title>
     </head>
-
     <style>
+        #logo-img {
+            max-height: 4rem;
+        }
         .custom-navbar {
             background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(6px);
@@ -38,42 +42,53 @@
         }
     </style>
     <body>
+        {{-- NavBar --}}
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+            <div class="container">
+            <a class to="/" class="navbar-brand fw-bold cursive">
+                <img
+                src="{{ asset('assets/logo.png') }}"
+                alt="Bethany's Events Logo"
+                class="img-fluid"
+                id="logo-img"
+                />
+            </a>
+            Web Manager
 
-    {{-- NavBar --}}
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-        <div class="container">
-        <a class="navbar-brand" href="#">Bethany's Content Management</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navMenu"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Rentals</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a to="/bookings" class="btn btn-gold">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
 
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Gallery</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Rentals</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Bookings</a>
-            </li>
-            </ul>
+        {{-- main content --}}
+        <div class="container-fluid p-5">
+            @yield('content')
         </div>
-        </div>
-    </nav>
-        @yield('content')
     </body>
 </html>
