@@ -3,10 +3,10 @@
     <form action="{{ route('home.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
-        <h5 class="text-center">Update Banner Photo</h5>
+        <h5 class="text-center">Update Banner Photo (JPG format only)</h5>
         <div class="container" style="display: flex; justify-content: center; align-items: center">
             <div class="input-group mb-3" id="heroUploadGroup">
-                <input type="file" class="form-control" id="heroUpload" name="hero" accept="image/*" required>
+                <input type="file" class="form-control" id="heroUpload" name="hero" accept=".jpg,.jpeg,image/jpeg" required>
                 <input class="input-group-text" type="submit" value="Save Changes">
             </div>
         </div>
@@ -88,6 +88,14 @@
     <script>
         document.getElementById('heroUpload').addEventListener('change', function(event) {
             const file = event.target.files[0];
+            
+            // Validate file type
+            if (file && !['image/jpeg'].includes(file.type)) {
+                alert('Please upload a JPG file only.');
+                event.target.value = '';
+                return;
+            }
+            
             const hero = document.getElementsByClassName('hero')[0];
             const reader = new FileReader();
             reader.onload = function(e) {

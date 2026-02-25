@@ -88,6 +88,20 @@
 
         {{-- main content --}}
         <div class="container-fluid p-5">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show position-fixed z-3 top-1 end-0 me-5" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if(session('error'))
+            
+                <div class="alert alert-danger alert-dismissible fade show position-fixed z-3 top-1 end-0 me-5" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             @yield('content')
         </div>
     </body>

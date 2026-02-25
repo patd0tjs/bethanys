@@ -15,12 +15,12 @@ class HomeController extends Controller
     }
 
     public function store(Request $request)
-    {        // // Example predefined name
-        $request->validate([
-            'hero' => 'required|mimes:jpeg,jpg'
-        ]);    
-
+    {
         try {
+            $request->validate([
+                'hero' => 'required|mimes:jpeg,jpg'
+            ]);    
+
             $fileName = 'hero.jpg';
             $request->file('hero')->storeAs('web', $fileName, 'public');
             return redirect('/')->with('success', 'Hero banner updated');
