@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HopmeController;
+use App\Http\Controllers\GalleryController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::post('/home/store', [HomeController::class, 'store'])->name('home.store');

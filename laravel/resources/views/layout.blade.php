@@ -40,6 +40,11 @@
         .nav-link:hover {
             color: #c9a24d;
         }
+
+        .gold {
+            color: #c9a24d;
+        }
+
     </style>
     <body>
         {{-- NavBar --}}
@@ -67,10 +72,10 @@
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link {{ $page == 'home' ? 'gold' : '' }}" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Gallery</a>
+                        <a class="nav-link {{ $page == 'gallery' ? 'gold' : '' }}" aria-current="page" href="/gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Services</a>
