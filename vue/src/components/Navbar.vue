@@ -26,16 +26,40 @@ import Logo from "@/assets/images/logo.png";
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item">
-            <RouterLink to="/" class="nav-link">Home</RouterLink>
+            <RouterLink
+              to="/"
+              class="nav-link"
+              active-class="active-link"
+              exact-active-class="active-link"
+              >Home</RouterLink
+            >
           </li>
           <li class="nav-item">
-            <RouterLink to="/gallery" class="nav-link">Gallery</RouterLink>
+            <RouterLink
+              to="/gallery"
+              class="nav-link"
+              active-class="active-link"
+              exact-active-class="active-link"
+              >Gallery</RouterLink
+            >
           </li>
           <li class="nav-item">
-            <RouterLink to="/services" class="nav-link">Services</RouterLink>
+            <RouterLink
+              to="/services"
+              class="nav-link"
+              active-class="active-link"
+              exact-active-class="active-link"
+              >Services</RouterLink
+            >
           </li>
           <li class="nav-item">
-            <RouterLink to="/rentals" class="nav-link">Rentals</RouterLink>
+            <RouterLink
+              to="/rentals"
+              class="nav-link"
+              active-class="active-link"
+              exact-active-class="active-link"
+              >Rentals</RouterLink
+            >
           </li>
           <li class="nav-item ms-lg-3">
             <RouterLink to="/bookings" class="btn btn-gold"
@@ -67,6 +91,10 @@ import Logo from "@/assets/images/logo.png";
 }
 
 .nav-link:hover {
+  color: #c9a24d;
+}
+
+.active-link {
   color: #c9a24d;
 }
 </style>
