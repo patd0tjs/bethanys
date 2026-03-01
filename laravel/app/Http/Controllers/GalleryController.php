@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class GalleryController extends Controller
 {
     /**
@@ -11,8 +12,20 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $page = 'gallery';
-        return view('gallery', compact('page'));
+        $galleries = Gallery::select('id','link')->get();
+
+        foreach ($galleries as $gallery)
+        {
+            $photos[] = Storage::url($gallery->link);
+        }
+
+        $data = [
+            'gallery' => $photos,
+            'page' => 'gallery',
+            'baseUrl' => config('app.url')
+        ];
+
+        return view('gallery', compact('data'));
     }
 
     /**
@@ -28,7 +41,23 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        for($i = 1; $i <= 21; $i++){
+
+            $request->validate([
+                'gallery.*' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
+            ]);
+
+            $file = $request->file('gallery'.$i);
+
+            if ($file && $file->isValid()) {
+                $path = $file->storeAs('web/gallery', $i.'.'.$file->extension(), 'public');
+                Gallery::where('id', $i)->update(['link' => $path]);
+            }
+        }
+
+        // return to the form with a success message and list of saved paths
+        return redirect()->back()
+            ->with('success', 'Gallery photo(s) updated');
     }
 
     /**
@@ -52,7 +81,7 @@ class GalleryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
     }
 
     /**

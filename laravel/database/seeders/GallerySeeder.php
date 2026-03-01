@@ -14,7 +14,7 @@ class GallerySeeder extends Seeder
      */
     public function run(): void
     {
-        for($i = 1; $i <= 20; $i++)
+        for($i = 1; $i <= 21; $i++)
         {
             DB::table('gallery')->insert([
                 'link' => Str::random(10),

@@ -11,8 +11,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $page = 'home';
-        return view('home', compact('page'));
+        $data = [
+            'page' => 'home'
+        ];
+        
+        return view('home', compact('data'));
     }
 
     public function store(Request $request)
