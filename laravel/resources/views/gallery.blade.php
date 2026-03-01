@@ -7,10 +7,13 @@
             <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row g-4 mt-4">
+
                     @for ($i = 1; $i <= 21; $i++)
                         <div class="col-md-4">
-                            <img src="{{ $data['gallery'][$i-1] }}" class="img-fluid rounded" alt="" />
-                            <input type="file" class="form-control" name="gallery{{ $i }}" accept="images/*">
+                            <div class="photo-wrapper mb-3">
+                                <img src="{{ $data['gallery'][$i-1] }}" class="img-fluid rounded" alt="gallery{{ $i }}" id="gallery{{ $i }}"/>
+                            </div>
+                            <input type="file" class="form-control" name="gallery{{ $i }}" accept="image/*" onchange="updatePreview(event, {{ $i }})">
                         </div>
                     @endfor
 
@@ -22,4 +25,40 @@
             </form>
         </div>
     </section>
+
+    <style>
+        .photo-wrapper {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+    <script>
+
+        function updatePreview(event, id){
+            const file = event.target.files[0];
+            
+            // Validate file type
+            if (file && !file.type.startsWith('image/')) {
+                alert('Please upload an image file.');
+                event.target.value = '';
+                return;
+            }
+            
+            // Update preview image
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('gallery' + id).src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
 @endsection
