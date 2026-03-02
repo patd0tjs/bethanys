@@ -12,7 +12,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::select('id','link')->get();
+        $galleries = Gallery::select('link')->get();
 
         foreach ($galleries as $gallery)
         {
@@ -90,5 +90,10 @@ class GalleryController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function getAllPhotos(){
+        $galleries = Gallery::select('link')->get();
+        return view('gallery', compact('data'));
     }
 }
