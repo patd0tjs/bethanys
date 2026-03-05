@@ -7,7 +7,6 @@
             <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row g-4 mt-4">
-
                     @for ($i = 1; $i <= 21; $i++)
                         <div class="col-md-4">
                             <div class="photo-wrapper mb-3">
@@ -16,12 +15,12 @@
                             <input type="file" class="form-control" name="gallery{{ $i }}" accept="image/*" onchange="updatePreview(event, {{ $i }})">
                         </div>
                     @endfor
-
                 </div>
                 <div class="row g-4 mt-4">
-                    <input class="input-group-text" type="submit" value="Save Changes">
+                    <div class="col-12 text-center">
+                        <input class="input-group-text btn btn-gold" type="submit" value="Save Changes">
+                    </div>
                 </div>
-
             </form>
         </div>
     </section>
