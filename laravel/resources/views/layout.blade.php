@@ -81,7 +81,7 @@
                         <a class="nav-link" aria-current="page" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Rentals</a>
+                        <a class="nav-link {{ $data['page'] == 'rentals' ? 'gold' : '' }}" aria-current="page" href="/rentals">Rentals</a>
                     </li>
                     <li class="nav-item ms-lg-3">
                         <a to="/bookings" class="btn btn-gold">Book Now</a>
