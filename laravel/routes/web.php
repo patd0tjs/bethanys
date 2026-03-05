@@ -10,3 +10,4 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/rentals', [RentalController::class, 'index'])->name('rentals');
 Route::post('/home/store', [HomeController::class, 'store'])->name('home.store');
 Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+Route::post('/rentals/store', [RentalController::class, 'store'])->name('rentals.store');

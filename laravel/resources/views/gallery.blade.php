@@ -41,7 +41,6 @@
     </style>
 
     <script>
-
         function updatePreview(event, id){
             const file = event.target.files[0];
             

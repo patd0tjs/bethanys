@@ -21,7 +21,7 @@ class RentalController extends Controller
         }
 
         $data = [
-            'rentals' => $photos,
+            'rental' => $photos,
             'page' => 'rentals',
             'baseUrl' => config('app.url')
         ];
@@ -40,9 +40,26 @@ class RentalController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(Request $request)
     {
-        //
+        for($i = 1; $i <= 21; $i++){
+
+            $request->validate([
+                'gallery.*' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
+            ]);
+
+            $file = $request->file('rental'.$i);
+
+            if ($file && $file->isValid()) {
+                $path = $file->storeAs('web/rentals', $i.'.'.$file->extension(), 'public');
+                Rentals::where('id', $i)->update(['link' => $path]);
+            }
+        }
+
+        // return to the form with a success message and list of saved paths
+        return redirect()->back()
+            ->with('success', 'Rental photo(s) updated');
     }
 
     /**
