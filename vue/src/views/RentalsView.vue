@@ -1,38 +1,24 @@
 <script setup>
-import { ref } from "vue";
-import rental1 from "@/assets/images/rental-1.jpg";
-import rental2 from "@/assets/images/rental-2.jpg";
-import rental3 from "@/assets/images/rental-3.jpg";
-import rental4 from "@/assets/images/rental-4.jpg";
-import rental5 from "@/assets/images/rental-5.jpg";
-import rental6 from "@/assets/images/rental-6.jpg";
+import { ref, onMounted, inject } from "vue";
 
-const rentals = ref([
-  {
-    id: 1,
-    img: rental1,
-  },
-  {
-    id: 2,
-    img: rental2,
-  },
-  {
-    id: 3,
-    img: rental3,
-  },
-  {
-    id: 4,
-    img: rental4,
-  },
-  {
-    id: 5,
-    img: rental5,
-  },
-  {
-    id: 6,
-    img: rental6,
-  },
-]);
+const API_BASE = inject("baseUrl");
+
+const rentals = ref([]);
+
+async function fetchGalleries() {
+  try {
+    const res = await fetch(`${API_BASE}/rentals`);
+    const data = await res.json();
+    rentals.value = data.map((url, idx) => ({
+      id: idx + 1,
+      img: url.startsWith("http") ? url : `${API_BASE}${url}`,
+    }));
+  } catch (err) {
+    console.error("Failed to load rental photos:", err);
+  }
+}
+
+onMounted(fetchGalleries);
 </script>
 
 <template>
@@ -43,16 +29,45 @@ const rentals = ref([
         Bridal gowns, suits, entourage wear, and accessories.
       </p>
       <div class="row g-4 mt-4">
-        <div v-for="rental in rentals" :key="rental.id" class="col-md-4">
-          <img :src="rental.img" class="img-fluid rounded" alt="" />
+        <div
+          v-for="rental in rentals"
+          :key="rental.id"
+          class="col-md-4 rental-item"
+        >
+          <div class="photo-wrapper mb-3">
+            <img :src="rental.img" class="img-fluid rounded" alt="" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .page-section {
   padding: 80px 0;
+}
+</style> -->
+
+<style scoped>
+.photo-wrapper {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* zoom the whole column */
+.rental-item {
+  transition: transform 0.3s ease;
+}
+.rental-item:hover {
+  transform: scale(1.05);
 }
 </style>

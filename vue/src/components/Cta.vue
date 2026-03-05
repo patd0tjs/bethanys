@@ -2,7 +2,7 @@
 <template>
   <section class="cta">
     <div class="container text-center">
-      <h2 class="cursive">Let’s Create Your Perfect Day</h2>
+      <h2 class="cursive">Let’s create your perfect day</h2>
       <RouterLink to="/bookings" class="btn btn-gold mt-3"
         >Schedule a Consultation</RouterLink
       >

@@ -26,7 +26,7 @@ const services = ref([
       <div class="row g-4 mt-4">
         <div v-for="service in services" :key="service.id" class="col-md-4">
           <div class="card dark-card">
-            <h5 class="cursive">{{ service.title }}</h5>
+            <h3 class="cursive">{{ service.title }}</h3>
             <p>{{ service.description }}</p>
           </div>
         </div>
@@ -44,11 +44,23 @@ const services = ref([
   color: #c9a24d;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-4 {
+  display: flex;
+}
+
 .dark-card {
   background: #141414;
   padding: 30px;
   border-radius: 12px;
   border: none;
   color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 </style>

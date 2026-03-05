@@ -1,5 +1,10 @@
 <script setup>
 import Navbar from "./components/Navbar.vue";
+import { provide } from "vue";
+
+const baseUrl = "http://localhost:8000/api";
+
+provide("baseUrl", baseUrl);
 </script>
 
 <template>

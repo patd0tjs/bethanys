@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/gallery', [ApiController::class, 'getGalleryPhotos'])->name('gallery');
+Route::get('/rentals', [ApiController::class, 'getRentalPhotos'])->name('rentals');

@@ -1,15 +1,14 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, inject } from "vue";
 
-const API_BASE = "http://localhost:8000"; // adjust if your backend runs elsewhere
+const API_BASE = inject("baseUrl");
 
 const galleries = ref([]);
 
 async function fetchGalleries() {
   try {
-    const res = await fetch(`${API_BASE}/api/gallery`);
+    const res = await fetch(`${API_BASE}/gallery`);
     const data = await res.json();
-    // API returns array of image URLs; they may be relative paths
     galleries.value = data.map((url, idx) => ({
       id: idx + 1,
       img: url.startsWith("http") ? url : `${API_BASE}${url}`,
