@@ -20,6 +20,9 @@
         <title>Bethsany's CMS</title>
     </head>
     <style>
+        .preview-label{
+            font-size: 4rem;
+        }
         #logo-img {
             max-height: 4rem;
         }
@@ -78,13 +81,10 @@
                         <a class="nav-link {{ $data['page'] == 'gallery' ? 'gold' : '' }}" aria-current="page" href="/gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link {{ $data['page'] == 'rentals' ? 'gold' : '' }}" aria-current="page" href="/rentals">Rentals</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a to="/bookings" class="btn btn-gold">Book Now</a>
+                        <a to="/bookings" class="btn btn-gold">Bookings</a>
                     </li>
                 </ul>
             </div>

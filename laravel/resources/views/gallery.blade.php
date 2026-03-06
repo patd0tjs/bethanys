@@ -2,7 +2,7 @@
 @section('content')
     <section class="page-section">
         <div class="container">
-            <h1 class="section-title text-center cursive">Our Work</h1>
+            <h1 class="cursive text-center preview-label">Gallery Preview</h1>
             
             <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
                 @csrf

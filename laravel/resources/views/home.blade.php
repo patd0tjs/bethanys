@@ -12,7 +12,7 @@
         </div>
     </form>
 
-    <h1 class="cursive text-center" id="previewLabel">Preview</h1>
+    <h1 class="cursive text-center preview-label">Hero Preview</h1>
     <section class="hero" style="background: url('{{ Storage::url('web/hero.jpg') }}') center/cover no-repeat">
         <div class="hero-overlay"></div>
         <div class="container hero-content text-center">
@@ -36,9 +36,6 @@
     </section>
 
     <style>
-        #previewLabel{
-            font-size: 4rem;
-        }
         .hero {
             position: relative;
             min-height: 90vh;

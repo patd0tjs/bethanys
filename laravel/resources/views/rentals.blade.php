@@ -2,10 +2,7 @@
 @section('content')
     <section class="page-section">
         <div class="container">
-            <h1 class="section-title text-center cursive">Formal Wear Rentals</h1>
-            <p class="text-center">
-                Bridal gowns, suits, entourage wear, and accessories.
-            </p>
+            <h1 class="cursive text-center preview-label">Rental Preview</h1>
             
             <form action="{{ route('rentals.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
