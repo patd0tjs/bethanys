@@ -24,12 +24,11 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect('/')->with('success', 'Welcome Back!');
         }
 
-        return back()->withErrors([
-            'username' => 'Invalid credentials',
-        ]);
+        return redirect()->back()
+            ->with('error', 'Invalid User');
     }
 
     public function logout(Request $request)
