@@ -14,13 +14,13 @@ class GallerySeeder extends Seeder
      */
     public function run(): void
     {
-        // for($i = 1; $i <= 21; $i++)
-        // {
-        //     DB::table('gallery')->insert([
-        //         'link'       => 'web/gallery/'.$i.'.jpg',
-        //         'created_at' => now(),
-        //         'updated_at' => now(),
-        //     ]);
-        // }
+        for($i = 1; $i <= 21; $i++)
+        {
+            DB::table('gallery')->insert([
+                'link'       => 'web/gallery/'.$i.'.jpg',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }

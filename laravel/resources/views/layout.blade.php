@@ -84,7 +84,10 @@
                         <a class="nav-link {{ $data['page'] == 'rentals' ? 'gold' : '' }}" aria-current="page" href="/rentals">Rentals</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a to="/bookings" class="btn btn-gold">Bookings</a>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <input type="submit" class="btn btn-gold" value="Logout">
+                        </form>
                     </li>
                 </ul>
             </div>

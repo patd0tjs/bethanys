@@ -19,12 +19,9 @@ class DatabaseSeeder extends Seeder
             GallerySeeder::class,
             RentalSeeder::class,
         ]);
-
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        
+        User::factory()->create([
+            'username' => 'bethany',
+        ]);
     }
 }
