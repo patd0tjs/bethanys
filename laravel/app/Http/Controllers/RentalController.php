@@ -46,7 +46,7 @@ class RentalController extends Controller
         for($i = 1; $i <= 21; $i++){
 
             $request->validate([
-                'gallery.*' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
+                'gallery.*' => 'required|image|mimes:jpeg,jpg,png,gif,svg',
             ]);
 
             $file = $request->file('rental'.$i);

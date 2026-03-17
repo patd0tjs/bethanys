@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GallerySeeder::class,
             RentalSeeder::class,
+            HeroSeeder::class
         ]);
         
         User::factory()->create([

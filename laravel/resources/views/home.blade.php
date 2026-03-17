@@ -3,17 +3,17 @@
     <form action="{{ route('home.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
-        <h5 class="text-center">Update Banner Photo (JPG format only)</h5>
+        <h5 class="text-center">Update Banner Photo</h5>
         <div class="container" style="display: flex; justify-content: center; align-items: center">
             <div class="input-group mb-3" id="heroUploadGroup">
-                <input type="file" class="form-control" id="heroUpload" name="hero" accept=".jpg,.jpeg,image/jpeg" required>
+                <input type="file" class="form-control" id="heroUpload" name="hero" accept="image/*" required>
                 <input class="input-group-text" type="submit" value="Save Changes">
             </div>
         </div>
     </form>
 
     <h1 class="cursive text-center preview-label">Hero Preview</h1>
-    <section class="hero" style="background: url('{{ Storage::url('web/hero.jpg') }}') center/cover no-repeat">
+    <section class="hero" style="background: url('{{ $data['hero'] }}') center/cover no-repeat">
         <div class="hero-overlay"></div>
         <div class="container hero-content text-center">
             <h4 class="cursive">Welcome to</h4>
@@ -85,13 +85,6 @@
     <script>
         document.getElementById('heroUpload').addEventListener('change', function(event) {
             const file = event.target.files[0];
-            
-            // Validate file type
-            if (file && !['image/jpeg'].includes(file.type)) {
-                alert('Please upload a JPG file only.');
-                event.target.value = '';
-                return;
-            }
             
             const hero = document.getElementsByClassName('hero')[0];
             const reader = new FileReader();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Hero;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -11,8 +13,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $hero = Hero::find(1);
         $data = [
-            'page' => 'home'
+            'page' => 'home',
+            'hero' => Storage::url($hero->link),
         ];
         
         return view('home', compact('data'));
@@ -22,15 +26,20 @@ class HomeController extends Controller
     {
         try {
             $request->validate([
-                'hero' => 'required|mimes:jpeg,jpg'
+                'hero' => 'required|image|mimes:jpeg,jpg,png,gif,svg'
             ]);    
+        
+            $file = $request->file('hero');
 
-            $fileName = 'hero.jpg';
-            $request->file('hero')->storeAs('web', $fileName, 'public');
-            return redirect('/')->with('success', 'Hero banner updated');
+            if ($file && $file->isValid()) {
+                $path = $file->storeAs('web', 'hero.'.$file->extension(), 'public');
+                Hero::where('id', 1)->update(['link' => $path]);
+                
+                return redirect('/')->with('success', 'Hero banner updated');
+            }
         
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'An error occured while uploading the image.');
+            return redirect()->back()->with('error', $e->getMessage());
         }
     }
 }
