@@ -1,12 +1,12 @@
 <script setup>
 const API_BASE = "http://localhost:8000";
-const heroUrl = `${API_BASE}/storage/web/hero.jpg`;
+const heroImgUrl = `${API_BASE}/storage/web/hero.jpg`;
 </script>
 
 <template>
   <section
     class="hero"
-    :style="{ background: `url(${heroUrl}) center/cover no-repeat` }"
+    :style="{ background: `url(${heroImgUrl}) center/cover no-repeat` }"
   >
     <div class="hero-overlay"></div>
     <div class="container hero-content text-center">
@@ -18,12 +18,12 @@ const heroUrl = `${API_BASE}/storage/web/hero.jpg`;
         love.
       </p>
       <div class="hero-actions">
-        <RouterLink to="/bookings" class="btn btn-gold me-2"
-          >Book a Consultation</RouterLink
+        <RouterLink to="/contact" class="btn btn-gold me-2"
+          >Contact Us</RouterLink
         >
 
-        <RouterLink to="/gallery" class="btn btn-outline-light"
-          >View Our Work</RouterLink
+        <RouterLink to="/works" class="btn btn-outline-light"
+          >View Our Works</RouterLink
         >
       </div>
     </div>

@@ -24,7 +24,7 @@ onMounted(fetchGalleries);
 <template>
   <section class="page-section">
     <div class="container">
-      <h1 class="section-title text-center cursive">Our Work</h1>
+      <h1 class="section-title text-center cursive">Our Works</h1>
       <div class="row g-4 mt-4">
         <div
           v-for="gallery in galleries"

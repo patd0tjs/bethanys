@@ -36,20 +36,11 @@ import Logo from "@/assets/images/logo.png";
           </li>
           <li class="nav-item">
             <RouterLink
-              to="/gallery"
+              to="/works"
               class="nav-link"
               active-class="active-link"
               exact-active-class="active-link"
-              >Gallery</RouterLink
-            >
-          </li>
-          <li class="nav-item">
-            <RouterLink
-              to="/services"
-              class="nav-link"
-              active-class="active-link"
-              exact-active-class="active-link"
-              >Services</RouterLink
+              >Our Works</RouterLink
             >
           </li>
           <li class="nav-item">
@@ -61,9 +52,19 @@ import Logo from "@/assets/images/logo.png";
               >Rentals</RouterLink
             >
           </li>
+          <li class="nav-item">
+            <RouterLink
+              to="/services"
+              class="nav-link"
+              active-class="active-link"
+              exact-active-class="active-link"
+              >Services</RouterLink
+            >
+          </li>
+
           <li class="nav-item ms-lg-3">
-            <RouterLink to="/bookings" class="btn btn-gold"
-              >Book Now</RouterLink
+            <RouterLink to="/contact" class="btn btn-gold"
+              >Contact Us</RouterLink
             >
           </li>
         </ul>

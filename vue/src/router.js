@@ -1,17 +1,17 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 
 import HomeView from "@/views/HomeView.vue";
-import GalleryView from "@/views/GalleryView.vue";
+import WorksView from "@/views/WorksView.vue";
 import ServicesView from "@/views/ServicesView.vue";
 import RentalsView from "@/views/RentalsView.vue";
-import BookingView from "@/views/BookingsView.vue";
+import ContactView from "@/views/ContactView.vue";
 
 const routes = [
   { path: "/", component: HomeView },
-  { path: "/gallery", component: GalleryView },
+  { path: "/works", component: WorksView },
   { path: "/services", component: ServicesView },
   { path: "/rentals", component: RentalsView },
-  { path: "/bookings", component: BookingView },
+  { path: "/contact", component: ContactView },
 ];
 
 const router = createRouter({
