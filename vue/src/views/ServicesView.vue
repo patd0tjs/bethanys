@@ -33,7 +33,8 @@ const servicesImgUrl = `${API_BASE}/storage/web/hero.jpg`;
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("http://localhost:8000/storage/web/hero.jpg") center right / cover no-repeat;
+  background: url("http://localhost:8000/storage/web/hero.jpg") center right /
+    cover no-repeat;
   /* Fade the image out to transparent on the left edge (more aggressive transition) */
   -webkit-mask-image: linear-gradient(to right, transparent 25%, black 45%);
   mask-image: linear-gradient(to right, transparent 25%, black 45%);
