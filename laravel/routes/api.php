@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/gallery', [ApiController::class, 'getGalleryPhotos'])->name('gallery');
 Route::get('/rentals', [ApiController::class, 'getRentalPhotos'])->name('rentals');
+Route::get('/hero', [ApiController::class, 'getHeroPhoto'])->name('hero');

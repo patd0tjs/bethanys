@@ -1,6 +1,22 @@
 <script setup>
-const API_BASE = "http://localhost:8000";
-const heroImgUrl = `${API_BASE}/storage/web/hero.jpg`;
+import { ref, onMounted, inject } from "vue";
+
+const API_BASE = inject("baseUrl");
+
+const heroImgUrl = ref('');
+
+async function fetchHero() {
+  try {
+    const res = await fetch(`${API_BASE}/hero`);
+    const data = await res.json();
+    heroImgUrl.value = data[0] || '';
+  } catch (err) {
+    console.error("Failed to load hero photo:", err);
+  }
+}
+
+onMounted(fetchHero);
+
 </script>
 
 <template>

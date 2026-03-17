@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Rentals;
+use App\Models\Hero;
 use Illuminate\Support\Facades\Storage;
 
 class ApiController extends Controller
@@ -25,5 +26,14 @@ class ApiController extends Controller
         });
 
         return response()->json($photos);
+    }
+
+    public function getHeroPhoto()
+    {
+        $photo = Hero::select('link')->get()->map(function ($hero) {
+            return asset(Storage::url($hero->link));
+        });
+
+        return response()->json($photo);
     }
 }
