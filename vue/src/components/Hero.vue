@@ -26,7 +26,7 @@ onMounted(fetchHero);
   >
     <div class="hero-overlay"></div>
     <div class="container hero-content text-center">
-      <h4 class="cursive">Welcome to</h4>
+      <h2 class="cursive">Welcome to</h2>
       <h1 class="cursive">Bethany's Events Organizing Services</h1>
       <p class="hero-sub">Planning • Styling • Formal Wear Rentals</p>
       <p class="hero-desc">
@@ -67,6 +67,10 @@ onMounted(fetchHero);
 
 .hero h1 {
   font-size: 3rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
 }
 
 .hero-sub {
