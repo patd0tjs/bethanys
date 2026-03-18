@@ -6,26 +6,27 @@
       <div class="contact-info-container">
         <h1 class="contact-title cursive">Contact Us</h1>
         
-        <div class="mb-2">
+        <div class="mb-3">
             <span class="label">Visit Us</span>
             <p>Poblacion, Valencia, Philippines, 8700</p>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-3">
             <span class="label">Call Us</span>
             <p><a href="tel:+639175663172">+63 917 566 3172</a></p>
         </div>
 
-        <div class="mb-2">
+        <div class="mb-4">
             <span class="label">Send Us an Email</span>
             <p><a href="mailto:hello@bethanys.com">bethanysweddingevents@gmail.com</a></p>
         </div>
 
         <div class="mb-5">
-            <span class="label">
+            <span class="label facebook">
                 <a href="https://www.facebook.com/profile.php?id=61584940190349" target="_blank" rel="noopener noreferrer">
-                    Click here to visit our Facebook page
+                    Click here
                 </a>
+                to visit our Facebook page
             </span>
         </div>
       </div> 
@@ -46,13 +47,27 @@
     font-size: 3rem;
 }
 
-.label {
+.label{
     display: block;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
     margin-bottom: 8px;
     color: #c9a24d;
+}
+
+p {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
 }
 
 .page-section a {
@@ -67,5 +82,13 @@
 
 .page-section a:hover {
     color: #D4AF37;
+}
+
+.facebook a {
+    color: #D4AF37 !important;
+}
+
+.facebook {
+    color: white
 }
 </style>

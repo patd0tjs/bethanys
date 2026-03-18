@@ -63,4 +63,13 @@ const services = ref([
   flex-direction: column;
   width: 100%;
 }
+
+.dark-card p {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
 </style>

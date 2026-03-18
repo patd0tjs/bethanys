@@ -61,6 +61,15 @@ const services = ref([
   opacity: 80%;
 }
 
+.dark-card p {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
 .page-section {
   position: relative;
   padding: 80px 0;

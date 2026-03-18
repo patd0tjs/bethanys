@@ -83,12 +83,28 @@ import Logo from "@/assets/logo.png";
   z-index: 1050;
 }
 
+.btn {
+  /* color: #ffffff; */
+  text-decoration: none;
+  /* transition: color 0.3s ease; */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
 .navbar-brand {
   color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .nav-link {
-  color: #e0e0e0;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
 }
 
 .nav-link:hover {

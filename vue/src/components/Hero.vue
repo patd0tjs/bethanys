@@ -74,11 +74,30 @@ onMounted(fetchHero);
 }
 
 .hero-sub {
-  color: #c9a24d;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.hero-desc {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
 }
 
 .hero-actions {
   margin-top: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
 }
 </style>

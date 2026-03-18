@@ -70,4 +70,13 @@ onMounted(fetchGalleries);
 .rental-item:hover {
   transform: scale(1.05);
 }
+
+.page-section p {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
 </style>
