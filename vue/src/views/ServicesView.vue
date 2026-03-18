@@ -13,17 +13,17 @@ const services = ref([
   },
   {
     id: 3,
-    title: "Event Styling & Décor",
+    title: "Event Styling and Décor",
     description: "We transform spaces into breathtaking environments. Our design team focuses on cohesive aesthetics, floral concepts, and unique details that reflect your personal love story.",
   },
     {
     id: 4,
-    title: "Supplier & Vendor Management",
+    title: "Supplier and Vendor Management",
     description: "Benefit from our curated network of top-tier professionals. We handle the contracts, communications, and scheduling, ensuring you have the best team supporting your vision",
   },
     {
     id: 5,
-    title: "Occasion Dress & Attire Rentals",
+    title: "Occasion Dress and Attire Rentals",
     description: "Access our exclusive collection of designer gowns and formal wear. Whether for a pre-wedding shoot or the grand event, we provide high-end styling options that ensure you look your most radiant without the commitment of a permanent purchase"
   },
 ]);
