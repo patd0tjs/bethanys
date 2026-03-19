@@ -11,6 +11,9 @@ provide("BASE_URL", BASE_URL);
 
 <template>
   <Navbar />
+  <h1 class="mt-3 text-center cursive">
+    This is demo application. Not for commercial use!
+  </h1>
   <RouterView />
 </template>
 

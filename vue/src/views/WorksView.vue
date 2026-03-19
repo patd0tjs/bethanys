@@ -1,24 +1,74 @@
 <script setup>
 import { ref, onMounted, inject } from "vue";
+import gallery1 from "@/assets/img/gallery/1.jpg";
+import gallery2 from "@/assets/img/gallery/2.jpg";
+import gallery3 from "@/assets/img/gallery/3.jpg";
+import gallery4 from "@/assets/img/gallery/4.jpg";
+import gallery5 from "@/assets/img/gallery/5.jpg";
+import gallery6 from "@/assets/img/gallery/6.jpg";
+import gallery7 from "@/assets/img/gallery/7.jpg";
+import gallery8 from "@/assets/img/gallery/8.jpg";
+import gallery9 from "@/assets/img/gallery/9.jpg";
 
+const ENV = inject("ENV");
 const API_BASE = inject("BASE_URL");
 
-const galleries = ref([]);
+let galleries = ref([
+  {
+    id: 1,
+    img: gallery1,
+  },
 
-async function fetchGalleries() {
-  try {
-    const res = await fetch(`${API_BASE}/gallery`);
-    const data = await res.json();
-    galleries.value = data.map((url, idx) => ({
-      id: idx + 1,
-      img: url.startsWith("http") ? url : `${API_BASE}${url}`,
-    }));
-  } catch (err) {
-    console.error("Failed to load gallery photos:", err);
+  {
+    id: 2,
+    img: gallery2,
+  },
+  {
+    id: 3,
+    img: gallery3,
+  },
+  {
+    id: 4,
+    img: gallery4,
+  },
+  {
+    id: 5,
+    img: gallery5,
+  },
+  {
+    id: 6,
+    img: gallery6,
+  },
+  {
+    id: 7,
+    img: gallery7,
+  },
+  {
+    id: 8,
+    img: gallery8,
+  },
+  {
+    id: 9,
+    img: gallery9,
+  },
+]);
+
+if (ENV.VITE_ENV !== "DEMO") {
+  async function fetchGalleries() {
+    try {
+      const res = await fetch(`${API_BASE}/gallery`);
+      const data = await res.json();
+      galleries.value = data.map((url, idx) => ({
+        id: idx + 1,
+        img: url.startsWith("http") ? url : `${API_BASE}${url}`,
+      }));
+    } catch (err) {
+      console.error("Failed to load gallery photos:", err);
+    }
   }
-}
 
-onMounted(fetchGalleries);
+  onMounted(fetchGalleries);
+}
 </script>
 
 <template>
