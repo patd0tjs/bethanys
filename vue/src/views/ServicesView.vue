@@ -4,27 +4,32 @@ const services = ref([
   {
     id: 1,
     title: "Full Wedding Planning",
-    description: "A comprehensive, start-to-finish experience for the couple who wants every detail expertly curated. From venue selection to the final dance, we manage the logistics so you can enjoy the journey.",
+    description:
+      "A comprehensive, start-to-finish experience for the couple who wants every detail expertly curated. From venue selection to the final dance, we manage the logistics so you can enjoy the journey.",
   },
   {
     id: 2,
     title: "Day-Of Coordination",
-    description: "For the couple who has planned their dream day but wants to be a guest at their own wedding. We step in to oversee the timeline, manage vendors, and ensure everything runs flawlessly.",
+    description:
+      "For the couple who has planned their dream day but wants to be a guest at their own wedding. We step in to oversee the timeline, manage vendors, and ensure everything runs flawlessly.",
   },
   {
     id: 3,
     title: "Event Styling and Décor",
-    description: "We transform spaces into breathtaking environments. Our design team focuses on cohesive aesthetics, floral concepts, and unique details that reflect your personal love story.",
+    description:
+      "We transform spaces into breathtaking environments. Our design team focuses on cohesive aesthetics, floral concepts, and unique details that reflect your personal love story.",
   },
-    {
+  {
     id: 4,
     title: "Supplier and Vendor Management",
-    description: "Benefit from our curated network of top-tier professionals. We handle the contracts, communications, and scheduling, ensuring you have the best team supporting your vision",
+    description:
+      "Benefit from our curated network of top-tier professionals. We handle the contracts, communications, and scheduling, ensuring you have the best team supporting your vision",
   },
-    {
+  {
     id: 5,
     title: "Occasion Dress and Attire Rentals",
-    description: "Access our exclusive collection of designer gowns and formal wear. Whether for a pre-wedding shoot or the grand event, we provide high-end styling options that ensure you look your most radiant without the commitment of a permanent purchase"
+    description:
+      "Access our exclusive collection of designer gowns and formal wear. Whether for a pre-wedding shoot or the grand event, we provide high-end styling options that ensure you look your most radiant without the commitment of a permanent purchase",
   },
 ]);
 </script>
@@ -48,7 +53,6 @@ const services = ref([
 </template>
 
 <style scoped>
-
 .dark-card {
   background: #141414;
   padding: 30px;
