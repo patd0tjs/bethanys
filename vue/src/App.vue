@@ -11,7 +11,7 @@ provide("BASE_URL", BASE_URL);
 
 <template>
   <Navbar />
-  <h1 class="mt-3 text-center cursive">
+  <h1 class="mt-3 text-center cursive" v-if="ENV.VITE_ENV == 'DEMO'">
     This is demo application. Not for commercial use!
   </h1>
   <RouterView />
