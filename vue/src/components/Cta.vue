@@ -15,4 +15,12 @@
   background: #000;
   padding: 80px 0;
 }
+
+.cta .btn {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
 </style>
