@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, inject } from "vue";
 
-const API_BASE = inject("baseUrl");
+const API_BASE = inject("BASE_URL");
 
 const galleries = ref([]);
 

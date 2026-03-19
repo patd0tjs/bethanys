@@ -1,27 +1,31 @@
 <script setup>
 import { ref, onMounted, inject } from "vue";
+import LocalHero from "@/assets/img/hero.jpg";
+const ENV = inject("ENV");
+let HERO_IMG_URL = ref(LocalHero);
 
-const API_BASE = inject("baseUrl");
+if (ENV.VITE_ENV !== "DEMO") {
+  const API_BASE = inject("BASE_URL");
+  HERO_IMG_URL = ref("");
 
-const heroImgUrl = ref("");
-
-async function fetchHero() {
-  try {
-    const res = await fetch(`${API_BASE}/hero`);
-    const data = await res.json();
-    heroImgUrl.value = data[0] || "";
-  } catch (err) {
-    console.error("Failed to load hero photo:", err);
+  async function fetchHero() {
+    try {
+      const res = await fetch(`${API_BASE}/hero`);
+      const data = await res.json();
+      HERO_IMG_URL.value = data[0] || "";
+    } catch (err) {
+      console.error("Failed to load hero photo:", err);
+    }
   }
-}
 
-onMounted(fetchHero);
+  onMounted(fetchHero);
+}
 </script>
 
 <template>
   <section
     class="hero"
-    :style="{ background: `url(${heroImgUrl}) center/cover no-repeat` }"
+    :style="{ background: `url(${HERO_IMG_URL}) center/cover no-repeat` }"
   >
     <div class="hero-overlay"></div>
     <div class="container hero-content text-center">

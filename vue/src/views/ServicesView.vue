@@ -86,7 +86,7 @@ const services = ref([
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url(../assets/services_bg.jpg) center/cover no-repeat;
+  background: url(../assets/img/services_bg.jpg) center/cover no-repeat;
   -webkit-mask-image: linear-gradient(to right, transparent 30%, black 90%);
   mask-image: linear-gradient(to right, transparent 30%, black 90%);
 }

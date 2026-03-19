@@ -2,9 +2,11 @@
 import Navbar from "./components/Navbar.vue";
 import { provide } from "vue";
 
-const baseUrl = "http://localhost:8000/api";
+const ENV = import.meta.env;
 
-provide("baseUrl", baseUrl);
+const BASE_URL = ENV.VITE_API;
+provide("ENV", ENV);
+provide("BASE_URL", BASE_URL);
 </script>
 
 <template>
