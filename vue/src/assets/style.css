@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "Edwardian Script";
-  src: url(./EdwardianScriptITC.ttf);
+  font-family: "Rustic Roadway";
+  src: url(./rusticroadway.otf);
 }
 
 .cursive {
-  font-family: "Edwardian Script", cursive;
+  font-family: "Rustic Roadway", cursive;
 }
 
 body {
