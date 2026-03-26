@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gallery;
+use App\Models\Works;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-class GalleryController extends Controller
+class WorksController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $galleries = Gallery::select('link')->get();
+        $works = Works::select('link')->get();
 
-        foreach ($galleries as $gallery)
+        foreach ($works as $work)
         {
-            $photos[] = Storage::url($gallery->link);
+            $photos[] = Storage::url($work->link);
         }
 
         $data = [
             'gallery' => $photos,
-            'page' => 'gallery',
+            'page' => 'works',
             'baseUrl' => config('app.url')
         ];
 
@@ -51,7 +51,7 @@ class GalleryController extends Controller
 
             if ($file && $file->isValid()) {
                 $path = $file->storeAs('web/gallery', $i.'.'.$file->extension(), 'public');
-                Gallery::where('id', $i)->update(['link' => $path]);
+                Works::where('id', $i)->update(['link' => $path]);
             }
         }
 
@@ -93,7 +93,7 @@ class GalleryController extends Controller
     }
 
     public function getAllPhotos(){
-        $galleries = Gallery::select('link')->get();
-        return view('gallery', compact('data'));
+        $galleries = Works::select('link')->get();
+        return view('works', compact('data'));
     }
 }

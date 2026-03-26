@@ -21,7 +21,7 @@
     </head>
     <style>
         .preview-label{
-            font-size: 4rem;
+            font-size: 2.5rem;
         }
         #logo-img {
             max-height: 4rem;
@@ -46,6 +46,14 @@
 
         .gold {
             color: #c9a24d;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
         }
 
     </style>
@@ -78,7 +86,7 @@
                         <a class="nav-link {{ $data['page'] == 'home' ? 'gold' : '' }}" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ $data['page'] == 'gallery' ? 'gold' : '' }}" aria-current="page" href="/gallery">Gallery</a>
+                        <a class="nav-link {{ $data['page'] == 'works' ? 'gold' : '' }}" aria-current="page" href="/works">Works</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ $data['page'] == 'rentals' ? 'gold' : '' }}" aria-current="page" href="/rentals">Rentals</a>

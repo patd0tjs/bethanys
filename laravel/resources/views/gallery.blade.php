@@ -2,15 +2,15 @@
 @section('content')
     <section class="page-section">
         <div class="container">
-            <h1 class="cursive text-center preview-label">Gallery Preview</h1>
+            <h1 class="cursive text-center preview-label">Works Preview</h1>
             
-            <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('works.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row g-4 mt-4">
                     @for ($i = 1; $i <= 21; $i++)
                         <div class="col-md-4">
                             <div class="photo-wrapper mb-3">
-                                <img src="{{ $data['gallery'][$i-1] }}" class="img-fluid rounded" alt="gallery{{ $i }}" id="gallery{{ $i }}"/>
+                                <img src="{{ $data['gallery'][$i-1] }}" class="img-fluid rounded" alt="work{{ $i }}" id="work{{ $i }}"/>
                             </div>
                             <input type="file" class="form-control" name="gallery{{ $i }}" accept="image/*" onchange="updatePreview(event, {{ $i }})">
                         </div>
@@ -54,7 +54,7 @@
             // Update preview image
             const reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('gallery' + id).src = e.target.result;
+                document.getElementById('work' + id).src = e.target.result;
             };
             reader.readAsDataURL(file);
         }

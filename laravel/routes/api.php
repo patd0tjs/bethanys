@@ -8,6 +8,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/gallery', [ApiController::class, 'getGalleryPhotos'])->name('gallery');
+Route::get('/works', [ApiController::class, 'getWorksPhotos'])->name('works');
 Route::get('/rentals', [ApiController::class, 'getRentalPhotos'])->name('rentals');
 Route::get('/hero', [ApiController::class, 'getHeroPhoto'])->name('hero');

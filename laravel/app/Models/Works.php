@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class Works extends Model
 {
-    protected $table = 'gallery';
+    protected $table = 'works';
 
     protected $fillable = [
         'link',

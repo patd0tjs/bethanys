@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class GallerySeeder extends Seeder
+class WorksSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,8 +16,8 @@ class GallerySeeder extends Seeder
     {
         for($i = 1; $i <= 21; $i++)
         {
-            DB::table('gallery')->insert([
-                'link'       => 'web/gallery/'.$i.'.jpg',
+            DB::table('works')->insert([
+                'link'       => 'web/works/'.$i.'.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

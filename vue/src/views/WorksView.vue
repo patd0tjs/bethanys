@@ -56,7 +56,7 @@ let galleries = ref([
 if (ENV.VITE_ENV !== "DEMO") {
   async function fetchGalleries() {
     try {
-      const res = await fetch(`${API_BASE}/gallery`);
+      const res = await fetch(`${API_BASE}/works`);
       const data = await res.json();
       galleries.value = data.map((url, idx) => ({
         id: idx + 1,

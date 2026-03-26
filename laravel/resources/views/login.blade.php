@@ -35,7 +35,7 @@
             class="img-fluid mb-3"
             id="logo-img"
             />
-            <h1 class="mb-3 cursive">Web Manager</h1>
+            <h2 class="mb-3 cursive">Web Manager</h2>
             <form method="POST" action="/login">
                 @csrf
                 <div class="form-floating mb-3">

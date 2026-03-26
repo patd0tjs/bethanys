@@ -1,10 +1,10 @@
 @font-face {
-    font-family: "Edwardian Script";
-    src: url(./EdwardianScriptITC.ttf);
+    font-family: "Rustic Roadway";
+    src: url(./rusticroadway.otf);
 }
 
 .cursive {
-    font-family: "Edwardian Script", cursive;
+    font-family: "Rustic Roadway", cursive;
 }
 
 body {
@@ -23,10 +23,23 @@ body {
     background: #c9a24d;
     color: #000;
     border: none;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
 }
 
 .btn-gold:hover {
     background: #b08c3c;
+}
+
+.btn-outline-light {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
 }
 
 /* PAGES */
